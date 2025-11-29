@@ -1,35 +1,39 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CurrencyService } from './service/currency.service';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let currencyService: jasmine.SpyObj<CurrencyService>;
+
   beforeEach(async () => {
+    const currencySpy = jasmine.createSpyObj('CurrencyService', ['setCurrency']);
+
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
+      providers: [{ provide: CurrencyService, useValue: currencySpy }]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    currencyService = TestBed.inject(CurrencyService) as jasmine.SpyObj<CurrencyService>;
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'crypto-checker-yt'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('crypto-checker-yt');
+  it('default selectedCurrency should be "INR"', () => {
+    expect(component.selectedCurrency).toBe('INR');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('crypto-checker-yt app is running!');
+  it('should call currencyService.setCurrency when sendCurrency is called', () => {
+    const testCurrency = 'USD';
+
+    component.sendCurrency(testCurrency);
+
+    expect(currencyService.setCurrency).toHaveBeenCalledWith(testCurrency);
+    expect(currencyService.setCurrency).toHaveBeenCalledTimes(1);
   });
 });
