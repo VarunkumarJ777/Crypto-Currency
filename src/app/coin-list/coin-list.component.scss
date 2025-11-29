@@ -1,0 +1,148 @@
+/* ---------------- HEADER ---------------- */
+.header {
+    height: 40%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #e6e6e6;
+  
+    h2 {
+      font-weight: 800;
+      margin-bottom: 15px;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: #4c8dff;
+      text-shadow: 0 0 14px rgba(76, 141, 255, 0.8);
+    }
+  
+    h6 {
+      color: #c5c9d2;
+      text-transform: capitalize;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  /* ---------------- BANNER ---------------- */
+  .banner {
+    background-image: url('../../assets/banner2.jpg');
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  
+    /* Add a dark overlay for readability */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 15, 25, 0.55);
+      backdrop-filter: blur(1px);
+    }
+  }
+  
+  /* ---------------- SUB HEADER (Marquee) ---------------- */
+  .sub-header {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* ---------------- CARDS ---------------- */
+  .card {
+    border: 0;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 12px;
+    margin: 35px 25px;
+    width: 120px;
+    height: 220px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(76, 141, 255, 0.45);
+      border-color: rgba(76, 141, 255, 0.5);
+    }
+  
+    img {
+      width: 70px;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 10px rgba(76, 141, 255, 0.4));
+    }
+  
+    h5 {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  
+    p {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #73b1ff;
+    }
+  }
+  
+  /* ---------------- TABLE ---------------- */
+  table {
+    width: 100%;
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* Filter input */
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    color: #fff !important;
+  }
+  
+  /* Table header row */
+  :host ::ng-deep tr.mat-header-row {
+    background: #4c8dff !important;
+    height: 60px;
+  }
+  
+  :host ::ng-deep .mat-sort-header-content {
+    color: #fff !important;
+    font-weight: 700;
+  }
+  
+  /* Table rows */
+  :host ::ng-deep tr.mat-row {
+    height: 70px;
+    background: #0f1522;
+    transition: 0.25s ease;
+  }
+  
+  :host ::ng-deep tr.mat-row:hover {
+    background: rgba(76, 141, 255, 0.12);
+    cursor: pointer;
+  }
+  
+  /* Table cells */
+  td,
+  th {
+    width: 25%;
+    color: #d7dce7 !important;
+    font-size: 15px;
+  }
+  
+  /* Paginator */
+  :host ::ng-deep .mat-paginator-outer-container {
+    background-color: #1b212f !important;
+    color: #cfd6e1;
+  }
+  

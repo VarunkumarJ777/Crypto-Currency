@@ -1,0 +1,113 @@
+/* Global text color */
+* {
+    color: #e6e6e6;
+  }
+  
+  /* -------------------- DETAILS SECTION -------------------- */
+  .details {
+    width: 30%;
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid rgba(255, 255, 255, 0.08);
+    padding-right: 20px;
+  
+    h3 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #4c8dff;
+      text-shadow: 0 0 10px rgba(76, 141, 255, 0.6);
+    }
+  
+    h6 {
+      width: 100%;
+      padding: 25px;
+      padding-top: 0;
+      padding-bottom: 15px;
+      text-align: justify;
+      font-size: 15px;
+      color: #c6c9d4;
+      line-height: 1.6;
+    }
+  }
+  
+  /* -------------------- IMAGE CONTAINER -------------------- */
+  .img {
+    background: transparent;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  
+    img {
+      margin: auto;
+      display: flex;
+      width: 180px;
+      filter: drop-shadow(0 0 12px rgba(76, 141, 255, 0.5));
+      transition: transform 0.3s ease, filter 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 18px rgba(76, 141, 255, 0.8));
+      }
+    }
+  }
+  
+  /* -------------------- MORE DETAILS SECTION -------------------- */
+  .more-detail {
+    padding: 15px 10px;
+    margin: 10px;
+    line-height: 50px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+  
+    &:hover {
+      box-shadow: 0 0 20px rgba(76, 141, 255, 0.25);
+      border-color: rgba(76, 141, 255, 0.4);
+    }
+  
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #73b1ff;
+    }
+  
+    .value {
+      font-size: 30px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+  }
+  
+  /* -------------------- BUTTON -------------------- */
+  .btn-custom {
+    color: #fff;
+    background: transparent;
+    font-weight: 500;
+    font-size: 18px;
+    border: 1px solid #4c8dff;
+    width: 23%;
+    padding: 10px 0;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  
+    &:hover {
+      background: rgba(76, 141, 255, 0.2);
+      box-shadow: 0 0 10px rgba(76, 141, 255, 0.6);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .btn-custom:focus {
+    background: #4c8dff;
+    font-weight: 700;
+    border: 1px solid #4c8dff;
+    box-shadow: 0 0 14px rgba(76, 141, 255, 0.9);
+  }
+  
